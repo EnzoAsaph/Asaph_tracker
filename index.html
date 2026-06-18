@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Finance Tracker - Dashboard">
+  <title>Dashboard | Student Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/vars.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">Finance<span class="accent">Tracker</span></a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Dashboard</a></li>
+          <li><a href="records.html" class="nav-link">Records</a></li>
+          <li><a href="addnew.html" class="nav-link">Add New</a></li>
+          <li><a href="settings.html" class="nav-link">Settings</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section aria-labelledby="dashboard-heading">
+      <header class="section-header">
+        <h1 id="dashboard-heading">Dashboard</h1>
+        <p>Your financial overview at a glance.</p>
+      </header>
+
+      <div class="dashboard-grid">
+        <!-- Total Records -->
+        <div class="card stat-card">
+          <span class="stat-label">Total Records</span>
+          <span class="stat-value" id="total-records">0</span>
+        </div>
+
+        <!-- Total Amount -->
+        <div class="card stat-card">
+          <span class="stat-label">Total Spent</span>
+          <span class="stat-value" id="total-amount">$0.00</span>
+        </div>
+
+        <!-- Top Category -->
+        <div class="card stat-card">
+          <span class="stat-label">Top Category</span>
+          <span class="stat-value" id="top-category">-</span>
+        </div>
+
+        <!-- Budget Status -->
+        <div class="card stat-card" id="budget-card" role="status" aria-live="polite">
+          <span class="stat-label">Budget</span>
+          <span class="stat-value" id="budget-value">-</span>
+          <span class="stat-note" id="budget-note">Set a target in Settings</span>
+        </div>
+
+        <!-- 7-Day Trend Chart -->
+        <div class="card chart-card" style="grid-column: 1 / -1;">
+          <h3>Last 7 Days</h3>
+          <div class="chart-bars" id="chart-bars" role="img" aria-label="Spending trend for the last 7 days">
+            <!-- Bars rendered by dashboard.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2025 Student Finance Tracker. Built with vanilla HTML, CSS &amp; JS.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/settings.js"></script>
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>
