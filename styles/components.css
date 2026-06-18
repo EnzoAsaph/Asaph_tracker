@@ -1,0 +1,421 @@
+/* =========================================
+   Components: Cards, Buttons, Forms,
+   Tables, Modals, Toasts, Dashboard
+   ========================================= */
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-bg-hover);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-sm);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  font-family: var(--font-base);
+  cursor: pointer;
+  border: 1px solid var(--color-bg-hover);
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  transition: background var(--transition), transform var(--transition);
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--color-bg-hover);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: #fff;
+  border-color: var(--color-danger);
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.btn-icon {
+  padding: 0.4rem;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-icon:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-accent);
+}
+
+/* ---------- Forms ---------- */
+.form-group {
+  margin-bottom: var(--sp-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--sp-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background-color: var(--color-bg-deep);
+  border: 1px solid var(--color-bg-hover);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+  font-size: var(--fs-base);
+  transition: border-color var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+/* Validation error state */
+.form-input.invalid,
+.form-select.invalid {
+  border-color: var(--color-danger);
+}
+
+.form-error-msg {
+  display: none;
+  margin-top: var(--sp-xs);
+  font-size: var(--fs-xs);
+  color: var(--color-danger);
+}
+
+/* ---------- Tables ---------- */
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-bg-hover);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 550px;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--sp-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-bg-hover);
+}
+
+.data-table th {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-primary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-table tbody tr:hover td {
+  background-color: var(--color-accent-glow);
+}
+
+/* Responsive table: cards on mobile */
+@media (max-width: 767px) {
+  .data-table { min-width: 0; }
+  .data-table thead { display: none; }
+
+  .data-table tbody,
+  .data-table tr,
+  .data-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .data-table tr {
+    margin-bottom: var(--sp-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-bg-hover);
+    border-radius: var(--radius-md);
+    padding: var(--sp-sm);
+  }
+
+  .data-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sp-sm);
+    border-bottom: 1px solid var(--color-bg-hover);
+  }
+
+  .data-table td:last-child {
+    border-bottom: none;
+    justify-content: flex-end;
+    gap: var(--sp-sm);
+  }
+
+  .data-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: var(--fs-xs);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+  }
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  background-color: var(--color-accent-glow);
+  color: var(--color-accent);
+  border: 1px solid currentColor;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-xs);
+}
+
+.stat-value {
+  display: block;
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.stat-note {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--sp-xs);
+}
+
+.stat-note.over-budget {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.stat-note.under-budget {
+  color: var(--color-success);
+}
+
+/* Simple CSS Bar Chart */
+.chart-card h3 {
+  margin-bottom: var(--sp-md);
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sp-sm);
+  height: 160px;
+  padding-top: var(--sp-md);
+  border-bottom: 1px solid var(--color-bg-hover);
+}
+
+.chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 40px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  min-height: 2px;
+  transition: height 0.4s ease;
+}
+
+.chart-label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--sp-xs);
+  text-align: center;
+}
+
+.chart-amount {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-xs);
+}
+
+/* ---------- Controls Bar (Records page) ---------- */
+.controls-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  align-items: center;
+  margin-bottom: var(--sp-lg);
+}
+
+.controls-card .search-box {
+  flex: 1;
+  min-width: 200px;
+}
+
+.controls-card .filter-box {
+  min-width: 160px;
+}
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-bg-hover);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-sm);
+}
+
+.modal-body {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-lg);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-md);
+}
+
+/* ---------- Toast Notification ---------- */
+.toast {
+  position: fixed;
+  top: var(--sp-lg);
+  right: var(--sp-lg);
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--sp-md) var(--sp-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  z-index: 300;
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.toast.visible {
+  transform: translateX(0);
+}
+
+/* ---------- Settings ---------- */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-md) 0;
+  border-bottom: 1px solid var(--color-bg-hover);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-info {
+  flex: 1;
+}
+
+.setting-info .form-label {
+  margin-bottom: 0;
+}
+
+.setting-info p {
+  font-size: var(--fs-xs);
+  margin: 0;
+}
+
+/* ---------- About Page ---------- */
+.about-features li {
+  padding: var(--sp-xs) 0;
+  color: var(--color-text-secondary);
+}
