@@ -27,7 +27,9 @@ const Search = (() => {
    */
   const highlight = (text, re) => {
     if (!re) return text;
-    return String(text).replace(re, match => `<mark>${match}</mark>`);
+    // Add global flag so ALL matches are highlighted, not just the first
+    const globalRe = new RegExp(re.source, re.flags.includes('g') ? re.flags : re.flags + 'g');
+    return String(text).replace(globalRe, match => `<mark>${match}</mark>`);
   };
 
   return { compileRegex, highlight };
