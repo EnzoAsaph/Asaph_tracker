@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tests | Student Finance Tracker</title>
+  <style>
+    body { font-family: 'Inter', sans-serif; padding: 2rem; line-height: 1.6; background: #0f172a; color: #f1f5f9; }
+    h1 { margin-bottom: 1rem; }
+    h2 { margin-top: 1.5rem; font-size: 1.1rem; color: #94a3b8; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+    .pass { color: #4ade80; }
+    .fail { color: #f87171; }
+    .test { padding: 0.4rem 0; border-bottom: 1px solid #1e293b; }
+    #summary { margin-top: 1rem; font-weight: 700; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <h1>Logic Verification Tests</h1>
+  <div id="results"></div>
+  <div id="summary"></div>
+
+  <!-- Load modules under test -->
+  <script src="scripts/validators.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/storage.js"></script>
+
+  <script>
+    const results = document.getElementById('results');
+    let passed = 0;
+    let failed = 0;
+
+    function assert(condition, message) {
+      const div = document.createElement('div');
+      div.className = 'test ' + (condition ? 'pass' : 'fail');
+      div.textContent = (condition ? '✅ PASS: ' : '❌ FAIL: ') + message;
+      results.appendChild(div);
+      condition ? passed++ : failed++;
+    }
+
+    function section(title) {
+      const h2 = document.createElement('h2');
+      h2.textContent = title;
+      results.appendChild(h2);
+    }
+
+    // ==========================================
+    // 1. REGEX VALIDATION TESTS
+    // ==========================================
+    section('Description Regex');
+    assert(Validators.test('Lunch at cafeteria', Validators.description), '"Lunch at cafeteria" is valid');
+    assert(Validators.test('A', Validators.description), 'Single char "A" is valid');
+    assert(!Validators.test(' leading space', Validators.description), 'Leading space rejected');
+    assert(!Validators.test('trailing space ', Validators.description), 'Trailing space rejected');
+    assert(!Validators.test('', Validators.description), 'Empty string rejected');
+
+    section('Amount Regex');
+    assert(Validators.test('0', Validators.amount), '"0" is valid');
+    assert(Validators.test('12', Validators.amount), '"12" is valid');
+    assert(Validators.test('12.50', Validators.amount), '"12.50" is valid');
+    assert(Validators.test('0.99', Validators.amount), '"0.99" is valid');
+    assert(!Validators.test('12.500', Validators.amount), '"12.500" too many decimals');
+    assert(!Validators.test('.50', Validators.amount), '".50" missing leading digit');
+    assert(!Validators.test('00', Validators.amount), '"00" leading zero rejected');
+    assert(!Validators.test('-5', Validators.amount), '"-5" negative rejected');
+
+    section('Date Regex');
+    assert(Validators.test('2025-09-29', Validators.date), '"2025-09-29" is valid');
+    assert(Validators.test('2025-01-01', Validators.date), '"2025-01-01" is valid');
+    assert(Validators.test('2025-12-31', Validators.date), '"2025-12-31" is valid');
+    assert(!Validators.test('2025-13-01', Validators.date), 'Month 13 rejected');
+    assert(!Validators.test('2025-00-01', Validators.date), 'Month 00 rejected');
+    assert(!Validators.test('2025-01-32', Validators.date), 'Day 32 rejected');
+    assert(!Validators.test('25-09-29', Validators.date), 'Two-digit year rejected');
+
+    section('Category Regex');
+    assert(Validators.test('Food', Validators.category), '"Food" is valid');
+    assert(Validators.test('Self-Care', Validators.category), '"Self-Care" hyphenated is valid');
+    assert(Validators.test('Fast Food', Validators.category), '"Fast Food" with space is valid');
+    assert(!Validators.test('Food!', Validators.category), '"Food!" special char rejected');
+    assert(!Validators.test('123', Validators.category), '"123" numbers rejected');
+
+    section('Advanced: Duplicate Word Detection (back-reference)');
+    assert(Validators.test('word word', Validators.duplicateWord), '"word word" detected');
+    assert(Validators.test('Coffee Coffee break', Validators.duplicateWord), '"Coffee Coffee break" detected');
+    assert(!Validators.test('Single word here', Validators.duplicateWord), '"Single word here" no duplicate');
+    assert(!Validators.test('the their thing', Validators.duplicateWord), '"the their thing" no exact repeat');
+
+    // ==========================================
+    // 2. SEARCH MODULE TESTS
+    // ==========================================
+    section('Safe Regex Compiler');
+    assert(Search.compileRegex('food') instanceof RegExp, 'Valid pattern returns RegExp');
+    assert(Search.compileRegex('') === null, 'Empty string returns null');
+    assert(Search.compileRegex('[invalid') === null, 'Invalid regex returns null (no crash)');
+    assert(Search.compileRegex('(coffee|tea)', 'i').test('Coffee'), 'Case-insensitive flag works');
+
+    section('Highlight Function');
+    assert(Search.highlight('lunch', null) === 'lunch', 'No regex returns original text');
+    const re = Search.compileRegex('lunch');
+    assert(Search.highlight('lunch today', re) === '<mark>lunch</mark> today', 'Match wrapped in <mark>');
+    assert(Search.highlight('no match', re) === 'no match', 'No match returns original');
+
+    // ==========================================
+    // 3. STORAGE MODULE TESTS
+    // ==========================================
+    section('Storage CRUD');
+
+    // Clean slate for tests
+    const backupKey = 'finance_tracker_transactions';
+    const backup = localStorage.getItem(backupKey);
+
+    Storage.clearAll();
+    assert(Storage.load().length === 0, 'After clearAll, load() returns empty array');
+
+    const testRecord = {
+      id: 'txn_test_1',
+      description: 'Test Coffee',
+      amount: '4.50',
+      category: 'Food',
+      date: '2025-10-01'
+    };
+
+    Storage.addTransaction(testRecord);
+    const afterAdd = Storage.load();
+    assert(afterAdd.length === 1, 'addTransaction adds one record');
+    assert(afterAdd[0].id === 'txn_test_1', 'Record has correct id');
+    assert(afterAdd[0].createdAt !== undefined, 'Record has createdAt timestamp');
+    assert(afterAdd[0].updatedAt !== undefined, 'Record has updatedAt timestamp');
+
+    Storage.updateTransaction('txn_test_1', { description: 'Updated Coffee' });
+    const afterUpdate = Storage.load();
+    assert(afterUpdate[0].description === 'Updated Coffee', 'updateTransaction changes description');
+
+    Storage.deleteTransaction('txn_test_1');
+    assert(Storage.load().length === 0, 'deleteTransaction removes the record');
+
+    section('Import/Export');
+    Storage.addTransaction({ id: 'txn_exp_1', description: 'Export test', amount: '10', category: 'Fees', date: '2025-10-05' });
+    const exported = JSON.parse(Storage.exportData());
+    assert(exported.transactions.length === 1, 'exportData includes transactions');
+    assert(exported.version === '1.0', 'Export has version field');
+
+    const importResult = Storage.importData({ transactions: [
+      { id: 'txn_imp_1', description: 'Imported', amount: '5', category: 'Books', date: '2025-10-06' }
+    ]});
+    assert(importResult.success === true, 'importData succeeds with valid data');
+    assert(Storage.load().length === 2, 'Import merges (no duplicates)');
+
+    const badImport = Storage.importData({ wrong: 'format' });
+    assert(badImport.success === false, 'importData fails with invalid format');
+
+    // Restore original data
+    Storage.clearAll();
+    if (backup) localStorage.setItem(backupKey, backup);
+
+    // ==========================================
+    // SUMMARY
+    // ==========================================
+    const summary = document.getElementById('summary');
+    summary.className = failed === 0 ? 'pass' : 'fail';
+    summary.textContent = 'Results: ' + passed + ' passed, ' + failed + ' failed out of ' + (passed + failed) + ' tests.';
+  </script>
+</body>
+</html>
