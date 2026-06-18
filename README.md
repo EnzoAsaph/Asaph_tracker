@@ -10,7 +10,8 @@ https://EnzoAsaph.github.io/Asaph_tracker/
 
 ## Demo Video
 
-https://youtu.be/wDAJa6Z720I
+<!-- REPLACE with your unlisted YouTube link after recording -->
+https://youtu.be/YOUR_VIDEO_ID_HERE
 
 ---
 
@@ -21,6 +22,45 @@ https://youtu.be/wDAJa6Z720I
 - **Add New** — Form with real-time regex validation and ARIA live feedback.
 - **Settings** — Dark/light theme toggle, currency selector (USD/EUR/GBP/JPY with mock rates), monthly budget target, JSON import/export, clear data.
 - **About** — App purpose and developer contact.
+
+---
+
+## Data Model
+
+Each transaction record follows this structure:
+
+```json
+{
+  "id": "txn_1718700000000",
+  "description": "Lunch at cafeteria",
+  "amount": "12.50",
+  "category": "Food",
+  "date": "2025-09-25",
+  "createdAt": "2025-09-25T12:00:00.000Z",
+  "updatedAt": "2025-09-25T12:00:00.000Z"
+}
+```
+
+- `id` — Unique identifier (`txn_` + timestamp), auto-generated on creation.
+- `createdAt` / `updatedAt` — ISO timestamps, set automatically.
+- All changes are auto-saved to `localStorage`.
+
+**Default categories:** Food, Books, Transport, Entertainment, Fees, Other.
+
+---
+
+## Currency & Exchange Rates
+
+Base currency is **USD**. Three additional currencies are supported using manual mock rates (no API calls):
+
+| Currency | Symbol | Rate (to USD) |
+|----------|--------|---------------|
+| USD | $ | 1.00 |
+| EUR | € | 0.92 |
+| GBP | £ | 0.79 |
+| JPY | ¥ | 150.12 |
+
+Rates can be changed in `scripts/settings.js`. The active currency is selected in Settings and persisted via `localStorage`.
 
 ---
 
@@ -79,6 +119,7 @@ All form controls have bound `<label>` elements. Focus indicators use a visible 
 ├── about.html          # About page with contact info
 ├── tests.html          # Logic verification tests
 ├── seed.json           # 12 sample transactions for testing
+├── .gitignore          # OS, editor, and node ignores
 ├── styles/
 │   ├── vars.css        # CSS custom properties & theme
 │   ├── global.css      # Reset, base styles, utilities
