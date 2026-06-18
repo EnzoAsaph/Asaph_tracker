@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Finance Tracker - Add Transaction">
+  <title>Add New | Student Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/vars.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">Finance<span class="accent">Tracker</span></a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Dashboard</a></li>
+          <li><a href="records.html" class="nav-link">Records</a></li>
+          <li><a href="addnew.html" class="nav-link active">Add New</a></li>
+          <li><a href="settings.html" class="nav-link">Settings</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section aria-labelledby="add-heading">
+      <header class="section-header">
+        <h1 id="add-heading">Add New Transaction</h1>
+        <p>Record an expense or payment.</p>
+      </header>
+
+      <div class="card" style="max-width: 560px;">
+        <!-- Live region for form status announcements -->
+        <div id="form-status" role="status" aria-live="polite" class="sr-only"></div>
+
+        <form id="transaction-form" novalidate>
+          <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" id="description" class="form-input" placeholder="e.g., Lunch at cafeteria" required aria-required="true" aria-describedby="desc-error">
+            <div class="form-error-msg" id="desc-error">No leading/trailing spaces allowed.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="number" id="amount" class="form-input" placeholder="0.00" step="0.01" min="0" required aria-required="true" aria-describedby="amount-error">
+            <div class="form-error-msg" id="amount-error">Enter a valid positive number (e.g. 12.50).</div>
+          </div>
+
+          <div class="form-group">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" class="form-select" required aria-required="true" aria-describedby="cat-error">
+              <option value="" disabled selected>Select a category</option>
+              <option value="Food">Food</option>
+              <option value="Books">Books</option>
+              <option value="Transport">Transport</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Fees">Fees</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="form-error-msg" id="cat-error">Please select a category.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" id="date" class="form-input" required aria-required="true" aria-describedby="date-error">
+            <div class="form-error-msg" id="date-error">Use YYYY-MM-DD format.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--sp-md);">
+            Save Transaction
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2025 Student Finance Tracker. Built with vanilla HTML, CSS &amp; JS.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/validators.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/settings.js"></script>
+  <script src="scripts/add.js"></script>
+</body>
+</html>
