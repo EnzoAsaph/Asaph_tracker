@@ -10,8 +10,7 @@ https://EnzoAsaph.github.io/Asaph_tracker/
 
 ## Demo Video
 
-<!-- REPLACE with your unlisted YouTube link after recording -->
-https://youtu.be/YOUR_VIDEO_ID_HERE
+*(Link will be added after recording)*
 
 ---
 
