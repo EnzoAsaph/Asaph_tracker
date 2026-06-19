@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeBtn && themeIcon) {
     const setIcon = (t) => { themeIcon.textContent = t === 'light' ? '☀️' : '🌙'; };
-    setIcon(localStorage.getItem('theme') || 'dark');
+    setIcon(localStorage.getItem('theme') || 'light');
 
     themeBtn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
