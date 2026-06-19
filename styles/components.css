@@ -7,6 +7,7 @@
 .card {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-bg-hover);
+  border-left: 3px solid var(--color-accent);
   border-radius: var(--radius-lg);
   padding: var(--sp-lg);
   box-shadow: var(--shadow);
@@ -217,7 +218,7 @@
 }
 
 .stat-card {
-  text-align: center;
+  text-align: left;
 }
 
 .stat-label {

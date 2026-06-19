@@ -165,4 +165,5 @@ All form controls have bound `<label>` elements. Focus indicators use a visible 
 - HTML5 (semantic)
 - CSS3 (custom properties, flexbox, grid, media queries, transitions)
 - Vanilla JavaScript (IIFE modules, DOM manipulation, localStorage, regex)
+- Fonts: Poppins + Source Code Pro (Google Fonts)
 - No frameworks, no external libraries

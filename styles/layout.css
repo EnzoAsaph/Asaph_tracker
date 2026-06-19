@@ -36,11 +36,12 @@
 }
 
 .logo {
-  font-family: var(--font-mono);
+  font-family: var(--font-base);
   font-weight: 700;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   color: var(--color-text-primary);
   text-decoration: none;
+  letter-spacing: -0.5px;
 }
 
 .logo:hover { text-decoration: none; }
@@ -64,29 +65,17 @@
   color: var(--color-text-secondary);
   font-size: var(--fs-sm);
   font-weight: 500;
-  padding: var(--sp-xs) 0;
+  padding: var(--sp-xs) var(--sp-sm);
+  border-radius: var(--radius-md);
   text-decoration: none;
-  transition: color var(--transition);
-}
-
-.nav-link::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: var(--color-accent);
-  transition: width var(--transition);
+  transition: color var(--transition), background var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-accent);
+  background: var(--color-accent-glow);
   text-decoration: none;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
 }
 
 /* Hamburger Toggle */
@@ -178,7 +167,7 @@ main > section {
 /* Desktop: 1024px */
 @media (min-width: 1024px) {
   .dashboard-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .chart-card {
