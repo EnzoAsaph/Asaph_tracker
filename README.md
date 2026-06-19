@@ -34,9 +34,9 @@ Each transaction record follows this structure:
   "description": "Lunch at cafeteria",
   "amount": "12.50",
   "category": "Food",
-  "date": "2025-09-25",
-  "createdAt": "2025-09-25T12:00:00.000Z",
-  "updatedAt": "2025-09-25T12:00:00.000Z"
+  "date": "2026-06-14",
+  "createdAt": "2026-06-14T12:00:00.000Z",
+  "updatedAt": "2026-06-14T12:00:00.000Z"
 }
 ```
 
@@ -69,7 +69,7 @@ Rates can be changed in `scripts/settings.js`. The active currency is selected i
 |---|-------|---------|---------|---------------|
 | 1 | Description | `/^\S(?:.*\S)?$/` | No leading/trailing spaces | `"Lunch at cafe"` ✅ · `" bad "` ❌ |
 | 2 | Amount | `/^(0\|[1-9]\d*)(\.\d{1,2})?$/` | Positive number, up to 2 decimals | `"12.50"` ✅ · `".50"` ❌ |
-| 3 | Date | `/^\d{4}-(0[1-9]\|1[0-2])-(0[1-9]\|[12]\d\|3[01])$/` | Strict YYYY-MM-DD | `"2025-09-29"` ✅ · `"25-13-01"` ❌ |
+| 3 | Date | `/^\d{4}-(0[1-9]\|1[0-2])-(0[1-9]\|[12]\d\|3[01])$/` | Strict YYYY-MM-DD | `"2026-06-14"` ✅ · `"26-13-01"` ❌ |
 | 4 | Category | `/^[A-Za-z]+(?:[ -][A-Za-z]+)*$/` | Letters, spaces, hyphens | `"Self-Care"` ✅ · `"Food!"` ❌ |
 | 5 | **Advanced** | `/\b(\w+)\s+\1\b/i` | Back-reference: duplicate consecutive words | `"Coffee Coffee"` ⚠️ detected |
 

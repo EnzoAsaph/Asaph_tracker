@@ -64,13 +64,13 @@
     assert(!Validators.test('-5', Validators.amount), '"-5" negative rejected');
 
     section('Date Regex');
-    assert(Validators.test('2025-09-29', Validators.date), '"2025-09-29" is valid');
-    assert(Validators.test('2025-01-01', Validators.date), '"2025-01-01" is valid');
-    assert(Validators.test('2025-12-31', Validators.date), '"2025-12-31" is valid');
-    assert(!Validators.test('2025-13-01', Validators.date), 'Month 13 rejected');
-    assert(!Validators.test('2025-00-01', Validators.date), 'Month 00 rejected');
-    assert(!Validators.test('2025-01-32', Validators.date), 'Day 32 rejected');
-    assert(!Validators.test('25-09-29', Validators.date), 'Two-digit year rejected');
+    assert(Validators.test('2026-06-14', Validators.date), '"2026-06-14" is valid');
+    assert(Validators.test('2026-01-01', Validators.date), '"2026-01-01" is valid');
+    assert(Validators.test('2026-12-31', Validators.date), '"2026-12-31" is valid');
+    assert(!Validators.test('2026-13-01', Validators.date), 'Month 13 rejected');
+    assert(!Validators.test('2026-00-01', Validators.date), 'Month 00 rejected');
+    assert(!Validators.test('2026-01-32', Validators.date), 'Day 32 rejected');
+    assert(!Validators.test('26-06-14', Validators.date), 'Two-digit year rejected');
 
     section('Category Regex');
     assert(Validators.test('Food', Validators.category), '"Food" is valid');
@@ -117,7 +117,7 @@
       description: 'Test Coffee',
       amount: '4.50',
       category: 'Food',
-      date: '2025-10-01'
+      date: '2026-06-14'
     };
 
     Storage.addTransaction(testRecord);
@@ -135,13 +135,13 @@
     assert(Storage.load().length === 0, 'deleteTransaction removes the record');
 
     section('Import/Export');
-    Storage.addTransaction({ id: 'txn_exp_1', description: 'Export test', amount: '10', category: 'Fees', date: '2025-10-05' });
+    Storage.addTransaction({ id: 'txn_exp_1', description: 'Export test', amount: '10', category: 'Fees', date: '2026-06-15' });
     const exported = JSON.parse(Storage.exportData());
     assert(exported.transactions.length === 1, 'exportData includes transactions');
     assert(exported.version === '1.0', 'Export has version field');
 
     const importResult = Storage.importData({ transactions: [
-      { id: 'txn_imp_1', description: 'Imported', amount: '5', category: 'Books', date: '2025-10-06' }
+      { id: 'txn_imp_1', description: 'Imported', amount: '5', category: 'Books', date: '2026-06-16' }
     ]});
     assert(importResult.success === true, 'importData succeeds with valid data');
     assert(Storage.load().length === 2, 'Import merges (no duplicates)');
