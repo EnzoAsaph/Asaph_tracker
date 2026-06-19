@@ -47,11 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     budgetValueEl.textContent = Currency.format(Math.abs(remaining));
 
     if (isOver) {
+      budgetValueEl.style.color = 'var(--color-danger)';
       budgetNoteEl.textContent = 'Over budget!';
       budgetNoteEl.className = 'stat-note over-budget';
       // Assertive for over-budget warnings
       budgetCardEl.setAttribute('aria-live', 'assertive');
     } else {
+      budgetValueEl.style.color = 'var(--color-success)';
       budgetNoteEl.textContent = 'Remaining';
       budgetNoteEl.className = 'stat-note under-budget';
       budgetCardEl.setAttribute('aria-live', 'polite');
