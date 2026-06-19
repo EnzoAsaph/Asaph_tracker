@@ -10,7 +10,7 @@ https://EnzoAsaph.github.io/Asaph_tracker/
 
 ## Demo Video
 
-*(Link will be added after recording)*
+https://youtu.be/2MxdV0-68HU
 
 ---
 
