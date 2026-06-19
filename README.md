@@ -119,6 +119,8 @@ All form controls have bound `<label>` elements. Focus indicators use a visible 
 ├── tests.html          # Logic verification tests
 ├── seed.json           # 12 sample transactions for testing
 ├── .gitignore          # OS, editor, and node ignores
+├── assets/
+│   └── wireframes/     # Hand-drawn wireframe sketches (SVG)
 ├── styles/
 │   ├── vars.css        # CSS custom properties & theme
 │   ├── global.css      # Reset, base styles, utilities
@@ -156,7 +158,7 @@ All form controls have bound `<label>` elements. Focus indicators use a visible 
 |------------|--------|
 | Base (~360px) | Single column, hamburger menu, stacked card table |
 | Tablet (768px) | Two-column dashboard grid, top-bar navigation |
-| Desktop (1024px) | Four-column stats grid, full-width chart and table |
+| Desktop (1024px) | Three-column stats grid, full-width chart and table |
 
 ---
 
