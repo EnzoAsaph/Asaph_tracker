@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="'Comic Sans MS','Segoe Print',cursive" fill="#333">
+  <rect width="800" height="500" fill="#fff" stroke="#999" stroke-width="2" rx="4"/>
+  <text x="400" y="30" text-anchor="middle" font-size="14" fill="#888">Settings — Desktop View</text>
+
+  <!-- Header -->
+  <rect x="20" y="45" width="760" height="40" rx="4" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="40" y="70" font-size="14" font-weight="bold">StudentWallet</text>
+  <text x="350" y="70" font-size="11" fill="#666">Dashboard   Records   Add New   Settings   About</text>
+
+  <text x="40" y="115" font-size="18" font-weight="bold">Settings</text>
+
+  <!-- Preferences Card -->
+  <rect x="40" y="130" width="450" height="200" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="60" y="158" font-size="14" font-weight="bold">Preferences</text>
+
+  <!-- Theme -->
+  <text x="60" y="185" font-size="11" fill="#888">Theme</text>
+  <text x="60" y="200" font-size="9" fill="#aaa">Switch between dark and light mode</text>
+  <rect x="400" y="175" width="60" height="28" rx="4" fill="#eee" stroke="#aaa" stroke-width="1"/>
+  <text x="420" y="194" font-size="14">🌙</text>
+
+  <line x1="55" y1="210" x2="475" y2="210" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Currency -->
+  <text x="60" y="235" font-size="11" fill="#888">Base Currency</text>
+  <rect x="60" y="243" width="410" height="26" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="75" y="261" font-size="10" fill="#666">USD ($) ▾</text>
+
+  <line x1="55" y1="278" x2="475" y2="278" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Budget -->
+  <text x="60" y="300" font-size="11" fill="#888">Monthly Budget Target</text>
+  <rect x="60" y="308" width="410" height="26" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="75" y="326" font-size="10" fill="#bbb">e.g., 500</text>
+
+  <!-- Data Management Card -->
+  <rect x="40" y="345" width="450" height="110" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="60" y="373" font-size="14" font-weight="bold">Data Management</text>
+
+  <rect x="60" y="390" width="100" height="30" rx="4" fill="#eee" stroke="#aaa" stroke-width="1"/>
+  <text x="80" y="410" font-size="10">Export JSON</text>
+
+  <rect x="175" y="390" width="100" height="30" rx="4" fill="#eee" stroke="#aaa" stroke-width="1"/>
+  <text x="190" y="410" font-size="10">Import JSON</text>
+
+  <rect x="290" y="390" width="120" height="30" rx="4" fill="#ef4444" stroke="none"/>
+  <text x="310" y="410" font-size="10" fill="#fff">Clear All Data</text>
+
+  <!-- Footer -->
+  <line x1="20" y1="480" x2="780" y2="480" stroke="#ddd" stroke-width="1"/>
+  <text x="400" y="495" text-anchor="middle" font-size="10" fill="#aaa">© 2026 Student Finance Tracker</text>
+</svg>

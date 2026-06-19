@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" font-family="'Comic Sans MS','Segoe Print',cursive" fill="#333">
+  <rect width="360" height="600" fill="#fff" stroke="#999" stroke-width="2" rx="4"/>
+  <text x="180" y="25" text-anchor="middle" font-size="12" fill="#888">Records — Mobile View (cards)</text>
+
+  <!-- Header -->
+  <rect x="15" y="40" width="330" height="36" rx="4" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="30" y="63" font-size="13" font-weight="bold">StudentWallet</text>
+  <line x1="310" y1="52" x2="330" y2="52" stroke="#333" stroke-width="2"/>
+  <line x1="310" y1="58" x2="330" y2="58" stroke="#333" stroke-width="2"/>
+  <line x1="310" y1="64" x2="330" y2="64" stroke="#333" stroke-width="2"/>
+
+  <text x="25" y="105" font-size="15" font-weight="bold">Transaction Records</text>
+
+  <!-- Search -->
+  <rect x="15" y="115" width="330" height="55" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1" stroke-dasharray="5,3"/>
+  <rect x="25" y="125" width="310" height="24" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="35" y="142" font-size="10" fill="#aaa">Search...</text>
+  <text x="25" y="162" font-size="8" fill="#666">☑ Case-insensitive</text>
+
+  <!-- Card 1 -->
+  <rect x="15" y="185" width="330" height="120" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="30" y="208" font-size="9" fill="#888">DATE</text>
+  <text x="250" y="208" font-size="11">2026-06-19</text>
+  <line x1="25" y1="215" x2="335" y2="215" stroke="#eee" stroke-width="1"/>
+  <text x="30" y="233" font-size="9" fill="#888">DESCRIPTION</text>
+  <text x="175" y="233" font-size="11">Stationery supplies</text>
+  <line x1="25" y1="240" x2="335" y2="240" stroke="#eee" stroke-width="1"/>
+  <text x="30" y="258" font-size="9" fill="#888">CATEGORY</text>
+  <rect x="200" y="246" width="50" height="16" rx="8" fill="none" stroke="#e6a000" stroke-width="1"/>
+  <text x="210" y="258" font-size="8" fill="#e6a000">Other</text>
+  <line x1="25" y1="265" x2="335" y2="265" stroke="#eee" stroke-width="1"/>
+  <text x="30" y="283" font-size="9" fill="#888">AMOUNT</text>
+  <text x="250" y="283" font-size="11">$0.99</text>
+  <text x="300" y="298" font-size="12" fill="#888">✏️ 🗑️</text>
+
+  <!-- Card 2 -->
+  <rect x="15" y="320" width="330" height="120" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="30" y="343" font-size="9" fill="#888">DATE</text>
+  <text x="250" y="343" font-size="11">2026-06-18</text>
+  <line x1="25" y1="350" x2="335" y2="350" stroke="#eee" stroke-width="1"/>
+  <text x="30" y="368" font-size="9" fill="#888">DESCRIPTION</text>
+  <text x="175" y="368" font-size="11">Uber ride to campus</text>
+  <line x1="25" y1="375" x2="335" y2="375" stroke="#eee" stroke-width="1"/>
+  <text x="30" y="393" font-size="9" fill="#888">CATEGORY</text>
+  <rect x="200" y="381" width="70" height="16" rx="8" fill="none" stroke="#e6a000" stroke-width="1"/>
+  <text x="208" y="393" font-size="8" fill="#e6a000">Transport</text>
+  <line x1="25" y1="400" x2="335" y2="400" stroke="#eee" stroke-width="1"/>
+  <text x="30" y="418" font-size="9" fill="#888">AMOUNT</text>
+  <text x="250" y="418" font-size="11">$12.00</text>
+  <text x="300" y="433" font-size="12" fill="#888">✏️ 🗑️</text>
+
+  <!-- More -->
+  <text x="180" y="475" text-anchor="middle" font-size="12" fill="#aaa">. . . more cards . . .</text>
+
+  <!-- Footer -->
+  <line x1="15" y1="560" x2="345" y2="560" stroke="#ddd" stroke-width="1"/>
+  <text x="180" y="580" text-anchor="middle" font-size="9" fill="#aaa">© 2026 Student Finance Tracker</text>
+</svg>

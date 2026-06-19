@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" font-family="'Comic Sans MS','Segoe Print',cursive" fill="#333">
+  <rect width="800" height="550" fill="#fff" stroke="#999" stroke-width="2" rx="4"/>
+  <text x="400" y="30" text-anchor="middle" font-size="14" fill="#888">Records — Desktop View</text>
+
+  <!-- Header -->
+  <rect x="20" y="45" width="760" height="40" rx="4" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="40" y="70" font-size="14" font-weight="bold">StudentWallet</text>
+  <text x="350" y="70" font-size="11" fill="#666">Dashboard   Records   Add New   Settings   About</text>
+
+  <text x="40" y="115" font-size="18" font-weight="bold">Transaction Records</text>
+
+  <!-- Search + Sort -->
+  <rect x="40" y="130" width="720" height="50" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <rect x="55" y="143" width="400" height="26" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="70" y="161" font-size="11" fill="#aaa">Search (regex supported)...</text>
+  <text x="470" y="155" font-size="9" fill="#666">☑ Case-insensitive</text>
+  <rect x="620" y="143" width="125" height="26" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="635" y="161" font-size="10" fill="#666">Date (Newest) ▾</text>
+
+  <!-- Table -->
+  <rect x="40" y="195" width="720" height="30" rx="0" fill="#eee" stroke="#333" stroke-width="1"/>
+  <text x="60" y="215" font-size="10" font-weight="bold" fill="#555">DATE</text>
+  <text x="200" y="215" font-size="10" font-weight="bold" fill="#555">DESCRIPTION</text>
+  <text x="420" y="215" font-size="10" font-weight="bold" fill="#555">CATEGORY</text>
+  <text x="560" y="215" font-size="10" font-weight="bold" fill="#555">AMOUNT</text>
+  <text x="680" y="215" font-size="10" font-weight="bold" fill="#555">ACTIONS</text>
+
+  <!-- Row 1 -->
+  <line x1="40" y1="255" x2="760" y2="255" stroke="#ddd" stroke-width="1"/>
+  <text x="60" y="248" font-size="11">2026-06-19</text>
+  <text x="200" y="248" font-size="11">Stationery supplies</text>
+  <rect x="420" y="235" width="55" height="18" rx="9" fill="none" stroke="#e6a000" stroke-width="1"/>
+  <text x="430" y="249" font-size="9" fill="#e6a000">Other</text>
+  <text x="560" y="248" font-size="11">$0.99</text>
+  <text x="685" y="248" font-size="11" fill="#888">✏️  🗑️</text>
+
+  <!-- Row 2 -->
+  <line x1="40" y1="285" x2="760" y2="285" stroke="#ddd" stroke-width="1"/>
+  <text x="60" y="278" font-size="11">2026-06-18</text>
+  <text x="200" y="278" font-size="11">Uber ride to campus</text>
+  <rect x="420" y="265" width="75" height="18" rx="9" fill="none" stroke="#e6a000" stroke-width="1"/>
+  <text x="428" y="279" font-size="9" fill="#e6a000">Transport</text>
+  <text x="560" y="278" font-size="11">$12.00</text>
+  <text x="685" y="278" font-size="11" fill="#888">✏️  🗑️</text>
+
+  <!-- Row 3 -->
+  <line x1="40" y1="315" x2="760" y2="315" stroke="#ddd" stroke-width="1"/>
+  <text x="60" y="308" font-size="11">2026-06-17</text>
+  <text x="200" y="308" font-size="11">Coffee with friends</text>
+  <rect x="420" y="295" width="95" height="18" rx="9" fill="none" stroke="#e6a000" stroke-width="1"/>
+  <text x="428" y="309" font-size="9" fill="#e6a000">Entertainment</text>
+  <text x="560" y="308" font-size="11">$8.75</text>
+  <text x="685" y="308" font-size="11" fill="#888">✏️  🗑️</text>
+
+  <!-- More rows indicator -->
+  <text x="400" y="345" text-anchor="middle" font-size="12" fill="#aaa">. . . more rows . . .</text>
+
+  <!-- Delete Modal sketch -->
+  <rect x="250" y="380" width="300" height="140" rx="6" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="410" text-anchor="middle" font-size="14" font-weight="bold">Delete Record?</text>
+  <text x="400" y="435" text-anchor="middle" font-size="11" fill="#888">This action cannot be undone.</text>
+  <rect x="290" y="460" width="80" height="30" rx="4" fill="#eee" stroke="#aaa" stroke-width="1"/>
+  <text x="330" y="480" text-anchor="middle" font-size="11">Cancel</text>
+  <rect x="430" y="460" width="80" height="30" rx="4" fill="#ef4444" stroke="none"/>
+  <text x="470" y="480" text-anchor="middle" font-size="11" fill="#fff">Delete</text>
+
+  <!-- Footer -->
+  <line x1="20" y1="530" x2="780" y2="530" stroke="#ddd" stroke-width="1"/>
+  <text x="400" y="545" text-anchor="middle" font-size="10" fill="#aaa">© 2026 Student Finance Tracker</text>
+</svg>

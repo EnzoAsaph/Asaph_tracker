@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="'Comic Sans MS','Segoe Print',cursive" fill="#333">
+  <rect width="800" height="500" fill="#fff" stroke="#999" stroke-width="2" rx="4"/>
+  <text x="400" y="30" text-anchor="middle" font-size="14" fill="#888">Add New Transaction — Desktop View</text>
+
+  <!-- Header -->
+  <rect x="20" y="45" width="760" height="40" rx="4" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="40" y="70" font-size="14" font-weight="bold">StudentWallet</text>
+  <text x="350" y="70" font-size="11" fill="#666">Dashboard   Records   Add New   Settings   About</text>
+
+  <text x="40" y="115" font-size="18" font-weight="bold">Add New Transaction</text>
+
+  <!-- Form Card -->
+  <rect x="40" y="130" width="450" height="340" rx="4" fill="#f9f9f9" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Description -->
+  <text x="60" y="160" font-size="11" fill="#888">Description</text>
+  <rect x="60" y="168" width="410" height="28" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="75" y="187" font-size="10" fill="#bbb">e.g., Lunch at cafeteria</text>
+
+  <!-- Amount -->
+  <text x="60" y="220" font-size="11" fill="#888">Amount</text>
+  <rect x="60" y="228" width="410" height="28" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="75" y="247" font-size="10" fill="#bbb">0.00</text>
+
+  <!-- Category -->
+  <text x="60" y="280" font-size="11" fill="#888">Category</text>
+  <rect x="60" y="288" width="410" height="28" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="75" y="307" font-size="10" fill="#bbb">Select a category ▾</text>
+
+  <!-- Date -->
+  <text x="60" y="340" font-size="11" fill="#888">Date</text>
+  <rect x="60" y="348" width="410" height="28" rx="4" fill="#fff" stroke="#aaa" stroke-width="1"/>
+  <text x="75" y="367" font-size="10" fill="#bbb">YYYY-MM-DD</text>
+
+  <!-- Submit Button -->
+  <rect x="60" y="395" width="410" height="35" rx="4" fill="#e6a000" stroke="none"/>
+  <text x="265" y="418" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Save Transaction</text>
+
+  <!-- Error example -->
+  <text x="510" y="160" font-size="11" fill="#888">Validation errors:</text>
+  <rect x="510" y="170" width="250" height="80" rx="4" fill="#fff5f5" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="525" y="192" font-size="10" fill="#ef4444">✗ No leading/trailing spaces</text>
+  <text x="525" y="212" font-size="10" fill="#ef4444">✗ Enter a valid positive number</text>
+  <text x="525" y="232" font-size="10" fill="#ef4444">✗ Duplicate words: "Lunch Lunch"</text>
+
+  <!-- Footer -->
+  <line x1="20" y1="480" x2="780" y2="480" stroke="#ddd" stroke-width="1"/>
+  <text x="400" y="495" text-anchor="middle" font-size="10" fill="#aaa">© 2026 Student Finance Tracker</text>
+</svg>
